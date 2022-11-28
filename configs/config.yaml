@@ -1,0 +1,22 @@
+project: histology
+data_path: /root/histology_lib/data/processed_predicted_images
+data_csv: /root/histology_lib/data/train.csv
+target: 
+  column: Target 1 - Гистологический класс
+  dict: {'Пилоидная астроцитома': 0, 'Диффузная астроцитома': 1,
+       'Олигоастроцитома': 2, 'Анапластическая астроцитома': 3, 'Глиобластома': 4,
+       'Плеоморфная ксантоастроцитома': 5, 'Олигодендроглиома': 6,
+       'Анапластическая олигодендроглиома': 7,
+       'Анапластическая олигоастроцитома': 8}
+batch_size: 8
+num_workers: 4
+model: resnet50
+classes: 9
+#device: cuda
+lr: 0.00001
+patience: 3
+decay_steps: 2
+decay: 0.8
+epochs: 10
+image_size: 256
+checkpoints: checkpoints
